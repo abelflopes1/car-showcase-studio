@@ -7,7 +7,7 @@ export function VehicleCard({ vehicle, featured = false }: { vehicle: Vehicle; f
     <Link
       to="/veiculo/$id"
       params={{ id: vehicle.id }}
-      className={`group relative flex flex-col overflow-hidden rounded-md border border-border bg-card transition-colors hover:border-primary/50 ${
+      className={`group relative flex flex-col overflow-hidden rounded-md border border-border bg-card transition-colors hover:border-foreground/40 hover:shadow-[var(--shadow-lift)] ${
         featured ? "md:col-span-2 md:flex-row" : ""
       }`}
     >
@@ -18,7 +18,7 @@ export function VehicleCard({ vehicle, featured = false }: { vehicle: Vehicle; f
           width={1280}
           height={854}
           loading="lazy"
-          className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] md:h-full"
+          className="photo-mono h-56 w-full object-cover group-hover:scale-[1.04] group-hover:[filter:grayscale(0.15)_contrast(1.05)] md:h-full"
         />
         <span className="absolute top-3 left-3 rounded-xs border border-border bg-background/80 px-2 py-1 text-[11px] font-semibold tracking-wide uppercase backdrop-blur">
           {vehicle.condition}

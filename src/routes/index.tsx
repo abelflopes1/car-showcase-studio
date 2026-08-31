@@ -31,7 +31,8 @@ const filters = [
 ];
 
 function Catalogo() {
-  const [featured, ...rest] = vehicles;
+  const featured = vehicles[0]!;
+  const rest = vehicles.slice(1);
 
   return (
     <div className="min-h-screen showroom-bg">
