@@ -73,7 +73,7 @@ const statusStyle: Record<StockRow["status"], string> = {
 
 function Dashboard() {
   return (
-    <div className="flex min-h-screen showroom-bg">
+    <div className="flex min-h-screen bg-background">
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-sidebar-border bg-sidebar px-4 py-6 lg:flex">
         <Link to="/" className="flex items-baseline gap-2 px-2">
           <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase">
@@ -90,11 +90,11 @@ function Dashboard() {
               key={item.label}
               className={`flex w-full items-center gap-3 rounded-xs px-3 py-2.5 text-sm transition-colors ${
                 item.active
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-[inset_2px_0_0_0_var(--foreground)]"
-                  : "text-muted-foreground hover:bg-sidebar-accent/60 hover:text-foreground"
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                  : "text-sidebar-foreground/60 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
               }`}
             >
-              <item.icon className={`h-4 w-4 ${item.active ? "text-primary" : ""}`} />
+              <item.icon className={`h-4 w-4 ${item.active ? "text-sidebar-primary" : ""}`} />
               {item.label}
             </button>
           ))}
@@ -108,7 +108,7 @@ function Dashboard() {
         </Link>
       </aside>
 
-      <main className="min-w-0 flex-1 px-6 py-8 lg:px-10">
+      <main className="dash-light min-w-0 flex-1 px-6 py-8 lg:px-10">
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] tracking-[0.42em] text-muted-foreground uppercase">Painel</p>
