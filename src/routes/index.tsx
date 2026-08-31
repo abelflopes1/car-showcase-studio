@@ -31,34 +31,51 @@ const filters = [
 ];
 
 function Catalogo() {
-  const [featured, ...rest] = vehicles;
+  const featured = vehicles[0]!;
+  const rest = vehicles.slice(1);
 
   return (
     <div className="min-h-screen showroom-bg">
       <SiteHeader />
 
       <main className="mx-auto max-w-7xl px-6 pb-24">
-        <section className="border-b border-border py-14">
-          <p className="text-xs tracking-[0.3em] text-primary uppercase">Estoque atualizado hoje</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] font-extrabold sm:text-6xl">
-            Carros selecionados, sem surpresa na entrega.
-          </h1>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Cada veículo passa por 128 pontos de inspeção, laudo cautelar e revisão completa antes
-            de entrar no pátio.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-primary" /> Garantia de 12 meses
-            </span>
-            <span className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-primary" /> Laudo cautelar aprovado
-            </span>
-            <span className="flex items-center gap-2">
-              <Timer className="h-4 w-4 text-primary" /> Aprovação em até 30 min
-            </span>
+        <section className="relative -mx-6 overflow-hidden border-b border-border px-6 py-20 sm:py-28">
+          <div className="pointer-events-none absolute inset-0 hairline-grid opacity-[0.35]" />
+          <div className="relative">
+            <p className="text-[11px] tracking-[0.42em] text-muted-foreground uppercase">
+              Estoque atualizado hoje
+            </p>
+            <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[0.95] font-extrabold text-balance-tight uppercase sm:text-7xl">
+              Carros selecionados,
+              <span className="block text-muted-foreground">sem surpresa na entrega.</span>
+            </h1>
+            <p className="mt-7 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              Cada veículo passa por 128 pontos de inspeção, laudo cautelar e revisão completa antes
+              de entrar no pátio.
+            </p>
+            <div className="mt-10 grid max-w-3xl grid-cols-1 border-t border-border sm:grid-cols-3">
+              {[
+                { icon: ShieldCheck, label: "Garantia", value: "12 meses" },
+                { icon: Sparkles, label: "Laudo cautelar", value: "Aprovado" },
+                { icon: Timer, label: "Aprovação", value: "Até 30 min" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 border-b border-border px-0 py-4 sm:border-r sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:border-r-0"
+                >
+                  <item.icon className="h-4 w-4 text-foreground" />
+                  <div>
+                    <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
+                      {item.label}
+                    </p>
+                    <p className="text-sm font-semibold">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
 
         <section className="sticky top-16 z-20 -mx-6 glass-panel px-6 py-4">
           <div className="flex flex-wrap items-center gap-3">
