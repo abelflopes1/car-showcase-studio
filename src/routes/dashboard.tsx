@@ -90,11 +90,11 @@ function Dashboard() {
               key={item.label}
               className={`flex w-full items-center gap-3 rounded-xs px-3 py-2.5 text-sm transition-colors ${
                 item.active
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-[inset_2px_0_0_0_var(--foreground)]"
-                  : "text-muted-foreground hover:bg-sidebar-accent/60 hover:text-foreground"
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                  : "text-sidebar-foreground/60 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
               }`}
             >
-              <item.icon className={`h-4 w-4 ${item.active ? "text-primary" : ""}`} />
+              <item.icon className={`h-4 w-4 ${item.active ? "text-sidebar-primary" : ""}`} />
               {item.label}
             </button>
           ))}
