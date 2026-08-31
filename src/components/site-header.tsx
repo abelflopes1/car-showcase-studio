@@ -6,8 +6,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 glass-panel">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-6">
         <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-lg font-900 tracking-tight uppercase">Revenda</span>
-          <span className="font-display text-lg font-bold tracking-tight text-primary uppercase">
+          <span className="font-display text-lg font-extrabold tracking-[0.18em] uppercase">Revenda</span>
+          <span className="font-display text-lg font-light tracking-[0.18em] text-muted-foreground uppercase">
             Premium
           </span>
         </Link>
@@ -23,7 +23,7 @@ export function SiteHeader() {
 
         <Link
           to="/dashboard"
-          className="inline-flex h-10 items-center gap-2 rounded-sm border border-border px-3 text-sm font-medium transition-colors hover:border-primary/60 hover:text-primary"
+          className="inline-flex h-10 items-center gap-2 rounded-sm border border-border px-3 text-sm font-medium transition-colors hover:border-foreground/50 hover:bg-foreground hover:text-background"
         >
           <Gauge className="h-4 w-4" />
           <span className="hidden sm:inline">Painel</span>

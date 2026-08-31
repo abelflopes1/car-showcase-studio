@@ -76,10 +76,10 @@ function Dashboard() {
     <div className="flex min-h-screen showroom-bg">
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-sidebar-border bg-sidebar px-4 py-6 lg:flex">
         <Link to="/" className="flex items-baseline gap-2 px-2">
-          <span className="font-display text-base font-extrabold tracking-tight uppercase">
+          <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase">
             Revenda
           </span>
-          <span className="font-display text-base font-bold tracking-tight text-primary uppercase">
+          <span className="font-display text-base font-light tracking-[0.18em] text-muted-foreground uppercase">
             Premium
           </span>
         </Link>
@@ -90,7 +90,7 @@ function Dashboard() {
               key={item.label}
               className={`flex w-full items-center gap-3 rounded-xs px-3 py-2.5 text-sm transition-colors ${
                 item.active
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-[inset_2px_0_0_0_var(--foreground)]"
                   : "text-muted-foreground hover:bg-sidebar-accent/60 hover:text-foreground"
               }`}
             >
@@ -111,8 +111,8 @@ function Dashboard() {
       <main className="min-w-0 flex-1 px-6 py-8 lg:px-10">
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-xs tracking-[0.3em] text-primary uppercase">Painel</p>
-            <h1 className="mt-2 font-display text-3xl font-extrabold">Visão geral da operação</h1>
+            <p className="text-[11px] tracking-[0.42em] text-muted-foreground uppercase">Painel</p>
+            <h1 className="mt-2 font-display text-4xl font-extrabold text-balance-tight uppercase">Visão geral da operação</h1>
           </div>
           <div className="flex gap-2 text-xs">
             {["Hoje", "7 dias", "30 dias", "Ano"].map((range, i) => (
@@ -132,9 +132,9 @@ function Dashboard() {
 
         <section className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {kpis.map((kpi) => (
-            <div key={kpi.label} className="rounded-md border border-border bg-card p-5">
+            <div key={kpi.label} className="group relative overflow-hidden rounded-md border border-border bg-card p-5 transition-colors hover:border-foreground/30">
               <p className="text-xs tracking-wide text-muted-foreground uppercase">{kpi.label}</p>
-              <p className="mt-3 font-display text-3xl font-bold">{kpi.value}</p>
+              <p className="mt-3 font-display text-4xl font-extrabold tracking-tight">{kpi.value}</p>
               <p
                 className={`mt-2 flex items-center gap-1 text-xs ${kpi.up ? "text-success" : "text-destructive"}`}
               >
@@ -151,8 +151,8 @@ function Dashboard() {
         </section>
 
         <section className="mt-6 grid gap-6 xl:grid-cols-[1.5fr_1fr]">
-          <div className="rounded-md border border-border bg-card p-5">
-            <h2 className="font-display text-sm font-bold tracking-wide uppercase">
+          <div className="group relative overflow-hidden rounded-md border border-border bg-card p-5 transition-colors hover:border-foreground/30">
+            <h2 className="font-display text-xs font-bold tracking-[0.2em] uppercase">
               Vendas por mês
             </h2>
             <div className="mt-5 h-64">
@@ -201,8 +201,8 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="rounded-md border border-border bg-card p-5">
-            <h2 className="font-display text-sm font-bold tracking-wide uppercase">
+          <div className="group relative overflow-hidden rounded-md border border-border bg-card p-5 transition-colors hover:border-foreground/30">
+            <h2 className="font-display text-xs font-bold tracking-[0.2em] uppercase">
               Mix por marca
             </h2>
             <div className="mt-5 h-64">
@@ -242,7 +242,7 @@ function Dashboard() {
         <section className="mt-6 grid gap-6 xl:grid-cols-[1.5fr_1fr]">
           <div className="overflow-hidden rounded-md border border-border bg-card">
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
-              <h2 className="font-display text-sm font-bold tracking-wide uppercase">Estoque</h2>
+              <h2 className="font-display text-xs font-bold tracking-[0.2em] uppercase">Estoque</h2>
               <span className="text-xs text-muted-foreground">{stock.length} registros</span>
             </div>
             <div className="overflow-x-auto">
@@ -283,10 +283,10 @@ function Dashboard() {
 
           <div className="rounded-md border border-border bg-card">
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
-              <h2 className="font-display text-sm font-bold tracking-wide uppercase">
+              <h2 className="font-display text-xs font-bold tracking-[0.2em] uppercase">
                 Leads recentes
               </h2>
-              <span className="text-xs text-primary">Ver todos</span>
+              <span className="text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground">Ver todos</span>
             </div>
             <ul>
               {leads.map((lead) => (
