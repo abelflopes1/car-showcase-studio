@@ -73,7 +73,7 @@ const statusStyle: Record<StockRow["status"], string> = {
 
 function Dashboard() {
   return (
-    <div className="flex min-h-screen showroom-bg">
+    <div className="flex min-h-screen bg-background">
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-sidebar-border bg-sidebar px-4 py-6 lg:flex">
         <Link to="/" className="flex items-baseline gap-2 px-2">
           <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase">
