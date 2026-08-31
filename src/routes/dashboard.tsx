@@ -108,7 +108,7 @@ function Dashboard() {
         </Link>
       </aside>
 
-      <main className="min-w-0 flex-1 px-6 py-8 lg:px-10">
+      <main className="dash-light min-w-0 flex-1 px-6 py-8 lg:px-10">
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] tracking-[0.42em] text-muted-foreground uppercase">Painel</p>
